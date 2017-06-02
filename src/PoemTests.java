@@ -11,22 +11,22 @@ import org.junit.Test;
 
 public class PoemTests {
 	
-	
+	//added a new test to account for the new feature
 	String[] luuletusRunnel = new String[]{"Kui sind kiusab kurat",
 
-			"hüüa valjusti: Kurat!",
+			"hÃ¼Ã¼a valjusti: Kurat!",
 
-			"kui sind jälgib jumal,",
+			"kui sind jÃ¤lgib jumal,",
 
-			"ütle julgesti: Jumal!",
+			"Ã¼tle julgesti: Jumal!",
 
-			"ära Häbene sõpru,",
+			"Ã¤ra HÃ¤bene sÃµpru,",
 
-			"ära vaenlasi varja,",
+			"Ã¤ra vaenlasi varja,",
 
 			"lahke meelega mine",
 
-			"väike karjalaps karja."};
+			"vÃ¤ike karjalaps karja."};
 	
 
 	Poem luuletus = new Poem();
@@ -39,7 +39,7 @@ public class PoemTests {
 	
 	@Test
 	public void ifItDoesNotContainsASpecificWord() throws Exception {
-		assertThat(luuletus.hasWord(luuletusRunnel, "küpsis"), is(false));
+		assertThat(luuletus.hasWord(luuletusRunnel, "kÃ¼psis"), is(false));
 	}
 	
 	@Test
@@ -49,7 +49,7 @@ public class PoemTests {
 	
 	@Test
 	public void countHowManyTimesAWordAppearsInThePoemIsZero() throws Exception {
-		assertThat(luuletus.countWord(luuletusRunnel, "küpsis"), is(0));
+		assertThat(luuletus.countWord(luuletusRunnel, "kÃ¼psis"), is(0));
 	}
 
 	@Test
@@ -63,16 +63,16 @@ public class PoemTests {
 		List<Integer> itDoesNotContain = Arrays.asList(-1);
 		
 		assertThat(luuletus.appearedRows(luuletusRunnel, "jumal"), is(itDoesContain));
-		assertThat(luuletus.appearedRows(luuletusRunnel, "küpsis"), is(itDoesNotContain));
+		assertThat(luuletus.appearedRows(luuletusRunnel, "kÃ¼psis"), is(itDoesNotContain));
 	}
 	
 	@Test
 	public void showRowWords() throws Exception {
-		List<String> itDoesContain = Arrays.asList("Kui sind kiusab kurat","kui sind jälgib jumal,");
+		List<String> itDoesContain = Arrays.asList("Kui sind kiusab kurat","kui sind jÃ¤lgib jumal,");
 		List<String> itDoesNotContain = Arrays.asList();
 		
 		assertThat(luuletus.appearedRowsWords(luuletusRunnel, "kui"), is(itDoesContain));
-		assertThat(luuletus.appearedRowsWords(luuletusRunnel, "küpsis"), is(itDoesNotContain));
+		assertThat(luuletus.appearedRowsWords(luuletusRunnel, "kÃ¼psis"), is(itDoesNotContain));
 	}
 
 }
