@@ -14,6 +14,7 @@ public class Poem {
 			
 			if (Arrays.asList(parts).contains(specificWordDeCapitalized) || Arrays.asList(parts).contains(specificWordCapitalized)) {
 //				System.out.println(Arrays.toString(parts));
+				//added back the feature with improvements
 				return true;
 			}
 		}
